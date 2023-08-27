@@ -18,13 +18,14 @@ let cart = [
         category: "Electronics",
     },
 ];
-function totalPrice() {
+function totalPrice(cart) {
     let sum = 0;
-    for (let i = 0; i < cart.length; i++) {
-        sum += cart[i].price;
-        console.log(`The price for the ${cart[i].name} in cart is : ${cart[i].price}`);
+    for (let i of cart) {
+        sum += i.price;
+        console.log(`The price for the ${i.name} in cart is : ${i.price}`);
     }
     console.log(`Total price for the products in cart is : ${sum}`);
+    return sum;
 }
-totalPrice();
+totalPrice(cart);
 export {};
